@@ -9,13 +9,22 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <nav class="navbar">
       <div class="container-project">
         <div class="container">
-          <a href="#" class="logo">Fajar Sidik</a>
-          <ul class="nav-links">
+          <a href="#" class="logo">Fajar Porto</a>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links" id="nav-links">
             <li><a href="#projects">Projek</a></li>
             <li><a href="#about">Tentang</a></li>
             <li><a href="#contact">Kontak</a></li>
@@ -43,32 +52,56 @@
           <h2>Project Portfolio</h2>
           <div class="card-grid">
             <div class="card">
-              <h3>Weather Tracking App</h3>
-              <p>Aplikasi pelacak cuaca real-time berbasis Flutter.</p>
+              <div class="card-image-container">
+                <img
+                  src="assets/images/mobile.png"
+                  alt="Diary App"
+                  class="card-image"
+                />
+              </div>
+              <h3>Diary Activity App</h3>
+              <p>Aplikasi penulisan aktifitas sehari-hari.</p>
+              <div class="card-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Dart</span>
+                <span class="tech-tag">API</span>
+              </div>
             </div>
+
             <div class="card">
+              <div class="card-image-container">
+                <img
+                  src="assets/images/website.png"
+                  alt="Library System"
+                  class="card-image"
+                />
+              </div>
               <h3>Library Booking System</h3>
               <p>
                 Sistem peminjaman buku perpustakaan berbasis Laravel dan React.
               </p>
+              <div class="card-tech">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
             </div>
+
             <div class="card">
-              <h3>Mental Health App</h3>
-              <p>Aplikasi pemeriksaan kesehatan mental terintegrasi AI GPT.</p>
-            </div>
-            <div class="card">
-              <h3>E-Commerce Website</h3>
-              <p>
-                Website jual beli online dengan fitur keranjang dan pembayaran.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Portfolio Web</h3>
-              <p>Website pribadi untuk menampilkan pengalaman dan proyek.</p>
-            </div>
-            <div class="card">
-              <h3>Financial Dashboard</h3>
-              <p>Dashboard analisis keuangan dengan grafik interaktif.</p>
+              <div class="card-image-container">
+                <img
+                  src="assets/images/website2.png"
+                  alt="Mental Health App"
+                  class="card-image"
+                />
+              </div>
+              <h3>Website Pendeteksi Gempa</h3>
+              <p>Aplikasi pendeteksi gempa dan tsunami.</p>
+              <div class="card-tech">
+                <span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
             </div>
           </div>
         </section>
@@ -88,7 +121,7 @@
                 <p>
                   Hiiii... Nama saya Muhamad Fajar Sidik, mahasiswa Program
                   Studi Sistem Informasi di Universitas Pamulang PSDKU Serang,
-                  kelas 05SISP001 dengan NIM 21101140000001. Saya memiliki hobi
+                  kelas 05SISP001 dengan NIM 221091750026. Saya memiliki hobi
                   bermain basket sejak masa sekolah hingga sekarang
                 </p>
                 <div class="about-reason">
@@ -138,13 +171,13 @@
             </a>
           </div>
           <div class="contact-item">
-            <a href="mailto:nama@email.com">
+            <a href="mailto:fazarsidik52@gmail.com">
               <img
                 src="assets/images/email.png"
                 alt="Email"
                 class="contact-icon"
               />
-              <span>nama@email.com</span>
+              <span>fazarsidik52@gmail.com</span>
             </a>
           </div>
         </div>
@@ -156,5 +189,24 @@
         <p>&copy; 2025 Muhammad Fajar Sidik. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      // Hamburger menu functionality
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // Close menu when clicking on a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>
